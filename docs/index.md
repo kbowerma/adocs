@@ -1,6 +1,7 @@
 # Welcome to Atrium Toolbag
 
-[Jupyter Notebook on this Container](http://localhost:8888)
+* [Jupyter Notebook on this Container](http://localhost:8888)
+* [atoolbag repo](http://github.com/kbowerma/atoolbag)
 
 ## Atrium Methodology
 
