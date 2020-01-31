@@ -1,6 +1,13 @@
 # Welcome to Atrium Toolbag
 
-* [Jupyter Notebook on this Container](http://localhost:8888)
+
+
+## Tools on this Container
+* [Jupyter Notebook on this Container](http://localhost:8888) (this window)
+* <a href="http://localhost:8888" target="_blank">Jupyter Notebook on this Container</a> (a new window)
+* <a href="http://localhost:8888/terminals/1" target="_blank">Terminal 1</a> (a new window)
+* <a href="http://localhost:8080" target="_blank">Adminer</a> postgres / atrium, ssl disabled
+* <a href="http://localhost:8081" target="_blank">PGWEB</a>: use containers internal address
 * [atoolbag repo](http://github.com/kbowerma/atoolbag)
 
 ## Atrium Methodology
