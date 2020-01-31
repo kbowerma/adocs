@@ -1,1 +1,14 @@
 site_name: Atrium Toolbag
+nav:
+    - Home: index.md
+    - Content Repo: https://github.com/kbowerma/adocs
+    - Tools1: 
+       - Jupyter: http://localhost:8888
+       - Terminal: http://localhost:8888/terminals/1
+       - Adminer: http://localhost:8080
+       - Pgweb: http://localhost:8081
+    - Reference:
+       - Pgeb: http://sosedoff.github.io/pgweb/
+       - Hasura: https://github.com/hasura/graphql-engine/tree/master/install-manifests
+       - Atrium Toolbag Repo: https://github.com/kbowerma/atoolbag
+       - mkdocs: https://www.mkdocs.org/#mkdocs

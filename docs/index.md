@@ -1,9 +1,9 @@
-# Welcome to Atrium Toolbag
+# Welcome to Atrium Toolbag 3.7
 
 
 
 ## Tools on this Container
-* [Jupyter Notebook on this Container](http://localhost:8888) (this window)
+* [Jupyter Notebook on this Container](http://localhost:8888) (this window, pwd: atrium)
 * <a href="http://localhost:8888" target="_blank">Jupyter Notebook on this Container</a> (a new window)
 * <a href="http://localhost:8888/terminals/1" target="_blank">Terminal 1</a> (a new window)
 * <a href="http://localhost:8080" target="_blank">Adminer</a> Container: adminer,  postgres / atrium, ssl disabled
