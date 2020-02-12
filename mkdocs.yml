@@ -1,15 +1,13 @@
 site_name: Atrium Toolbag
 nav:
     - Home: index.md
-    - this content repo: https://github.com/kbowerma/adocs
-    - Tools1: 
-       - Jupyter: http://localhost:8888
-       - Terminal: http://localhost:8888/terminals/1
-       - Adminer: http://localhost:8080
-       - Pgweb: http://localhost:8081
-    - Tools2:
-       - Adminer: href="http://localhost:8080
-       - Pgweb: href="http://localhost:8081
+    - This content repo: https://github.com/kbowerma/adocs
+    - Tools: 
+       - Jupyter: http://localhost:81
+       - Terminal: http://localhost:81/terminals/1
+       - Adminer: href=http://localhost:82
+       - Pgweb: href=http://localhost:83
+       - Hasura: href=http://localhost:83
     - Reference:
        - Adminer: https://www.adminer.org/
        - Pgeb: http://sosedoff.github.io/pgweb/
