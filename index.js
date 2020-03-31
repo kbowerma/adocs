@@ -120,7 +120,7 @@ app.get("/user", secured, (req, res, next) => {
 });
 
  //app.use('/site', secured,  express.static(path.join(__dirname, '../site')))   //KTB  3/30/20
-app.use('/', secured,  express.static(path.join(__dirname, '../site')))   //KTB  3/31/20
+app.use('/', secured,  express.static(path.join(__dirname, 'site')))   //KTB  3/31/20
 
 
 // Server Activation
