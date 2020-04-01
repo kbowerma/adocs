@@ -9,9 +9,12 @@ const path = require("path");
 const expressSession = require("express-session");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
-
+const { createProxyMiddleware } = require('http-proxy-middleware');
 require("dotenv").config();
 const authRouter = require("./auth");
+var morgan = require('morgan')
+
+morgan(':method :url :status :res[content-length] - :response-time ms')
 
 
 // App Variables
@@ -19,6 +22,20 @@ const authRouter = require("./auth");
 const app = express();
 const port =  "8000";
 
+/*
+const { routes } =  {
+  "routes": [
+    {
+      "route": "/site",
+      "address": "http://localhost:8000"
+    },
+    {
+      "route": "/notebooks",
+      "address": "http://localhost:8888"
+    }
+  ]
+}
+*/
 
 // Session Configuration
 
@@ -83,6 +100,8 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
+// mouting morgan the loger
+app.use(morgan('combined'))
 
 // Creating custom middleware with Express
 app.use((req, res, next) => {
@@ -105,6 +124,21 @@ const secured = (req, res, next) => {
   res.redirect("/login");
 };
 
+/*
+for (route of routes) {
+    app.use(route.route,
+        proxy({
+            target: route.address,
+            pathRewrite: (path, req) => {
+                return path.split('/').slice(2).join('/'); // Could use replace, but take care of the leading '/'
+            }
+        })
+    );
+}
+*/
+
+
+
 /* default route removed
 app.get("/", (req, res) => {
   res.render("index", { title: "Home" });
@@ -119,8 +153,26 @@ app.get("/user", secured, (req, res, next) => {
   });
 });
 
- //app.use('/site', secured,  express.static(path.join(__dirname, '../site')))   //KTB  3/30/20
-app.use('/', secured,  express.static(path.join(__dirname, 'site')))   //KTB  3/31/20
+// JuypterProxy middleware options
+const options = {
+  target: 'http://localhost:8000', // target host
+  changeOrigin: true, // needed for virtual hosted sites
+  ws: true, // proxy websockets
+  router: {
+    // when request.headers.host == 'dev.localhost:3000',
+    // override target 'http://www.example.org' to 'http://localhost:8000'
+    'localhost:8000': 'http://localhost:8888',
+  },
+};
+
+// create JuypterProxy
+const jupyterPoxy = createProxyMiddleware(options);
+
+app.use('/site', secured,  express.static(path.join(__dirname, 'site')))   //KTB  3/31/20
+app.use('/', secured, jupyterPoxy);
+//app.use('/', secured,  express.static(path.join(__dirname, 'site')))   //KTB  3/31/20
+
+//app.use('/api', createProxyMiddleware({ target: 'http://www.example.org', changeOrigin: true }));
 
 
 // Server Activation
