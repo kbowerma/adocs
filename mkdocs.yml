@@ -3,14 +3,14 @@ nav:
     - Home: index.md
     - This content repo: https://github.com/kbowerma/adocs
     - Tools: 
-       - Jupyter: http://localhost:81
-       - Terminal: http://localhost:81/terminals/1
-       - Adminer: href=http://localhost:82
-       - Pgweb: href=http://localhost:83
-       - Hasura: href=http://localhost:83
+       - Jupyter: http://localhost:8000/notebook
+       - Terminal: http://localhost:8000/notebook/terminals/1
     - Reference:
        - Adminer: https://www.adminer.org/
        - Pgeb: http://sosedoff.github.io/pgweb/
        - Hasura: https://github.com/hasura/graphql-engine/tree/master/install-manifests
        - Atrium Toolbag Repo: https://github.com/kbowerma/atoolbag
        - mkdocs: https://www.mkdocs.org/#mkdocs
+    - JupyterNotebook: http://localhost:8000/notebook
+extra_css:
+  - css/atrium.css
